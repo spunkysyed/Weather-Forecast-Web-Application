@@ -199,6 +199,13 @@ const CityTable: React.FC = () => {
                           onClick={() => {
                             navigate(`/weather/${city.ascii_name}`);
                           }}
+                          onContextMenu={(e) => {
+                            e.preventDefault(); // Prevent the default right-click menu
+                            window.open(
+                              `/weather/${city.ascii_name}`,
+                              "_blank"
+                            ); // Open the weather page in a new tab
+                          }}
                         >
                           <a href={`/weather/${city.ascii_name}`}>
                             {city.ascii_name}
